@@ -572,8 +572,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa32e6075b4734f579e8f8bb5375fc2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spinButton: {fileID: 1426634043}
-  _stopButton: {fileID: 1551028567}
   _endValue: {fileID: 1969467426}
 --- !u!1 &1255746923
 GameObject:
@@ -1147,7 +1145,7 @@ Transform:
   m_GameObject: {fileID: 1969467425}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -11.76, z: 5}
+  m_LocalPosition: {x: 0, y: -6.07, z: 5}
   m_LocalScale: {x: 8.4375, y: 1, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []

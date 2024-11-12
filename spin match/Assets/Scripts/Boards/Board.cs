@@ -56,7 +56,6 @@ namespace SpinMatch.Boards
                     _allGridPositions[iteration] = gridPosition;
                 }
             }
-
         }
 
         private void GenerateSlotsOutBoard(List<IGridSlot> slotList, string slotType)

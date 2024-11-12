@@ -7,6 +7,9 @@ namespace SpinMatch.Enums
     public enum BoardEvents
     {
         Spin,
-        Stop
+        Stop,
+        OnPointerDown,
+        OnPointerUp,
+        OnPointerDrag,
     }
 }

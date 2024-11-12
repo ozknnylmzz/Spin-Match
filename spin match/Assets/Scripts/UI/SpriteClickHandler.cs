@@ -34,7 +34,7 @@ namespace SpinMatch.UI
             else if (spriteName == "Stop")
             {
                 Debug.Log("Stop sprite clicked!");
-                // EventManager.Execute(BoardEvents.Stop);
+                EventManager.Execute(BoardEvents.Stop);
 
             }
         }

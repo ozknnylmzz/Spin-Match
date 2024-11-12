@@ -33,34 +33,22 @@ namespace SpinMatch.Level
 
         public void FillBoardWithItems()
         {
-            int topSlotIndex=0;
-            
-            for (int i = 0; i < _board.RowCount; i++)
+            int topSlotIndex = 0;
+            foreach (IGridSlot gridSlot in _board.TopSlots)
             {
-                for (int j = 0; j < _board.ColumnCount; j++)
-                {
-                    IGridSlot gridSlot = _board[i, j];
-
-                    if (!gridSlot.CanSetItem)
-                        continue;
-
-                    SetItemWithoutMatch(_board, gridSlot,out GridItem item);
-                    topSlotIndex++;
-                }
+                SetItemWithoutMatch(_board, gridSlot,out GridItem item);
+                item.SetDestinationSlot(_board.InBoardSlots[topSlotIndex]);
+                topSlotIndex++;
             }
         }
 
         public void FillOutBoardItems()
         {
-            int topSlotIndex=_board.ColumnCount*_board.RowCount;
-            
-            foreach (IGridSlot slot in _board.TopSlots)
+            foreach (IGridSlot slot in _board.InBoardSlots)
             {
                 if (!slot.CanSetItem)
                     continue;
-                
                 SetItemWithoutMatch(_board, slot,out GridItem item);
-                topSlotIndex--;
             }
         }
 
@@ -75,7 +63,6 @@ namespace SpinMatch.Level
             while (true)
             {
                 item = _itemGenerator.CheckRequiredItem() ? _itemGenerator.GetRandomNormalItem() : _itemGenerator.GetRequiredItem();
-                // item.SetDestinationSlot(slot);
                  _itemGenerator.SetItemOnSlot(item, slot);
 
                 BoardMatchData boardMatchData = _matchDataProvider.GetMatchData(board, slot.GridPosition);

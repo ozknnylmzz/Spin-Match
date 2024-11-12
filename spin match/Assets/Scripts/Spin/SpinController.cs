@@ -31,7 +31,7 @@ namespace SpinMatch.Spin
             {
                 if (slot.Item != null)
                 {
-                    slot.Item.MoveToTarget(new Vector2(slot.Item.transform.position.x,_endValue.position.y),Constants.ITEM_SPIN_SPEED);
+                    slot.Item.MoveToSpinTarget(new Vector2(slot.Item.transform.position.x,_endValue.position.y),Constants.ITEM_SPIN_SPEED);
                 }
             }
         }

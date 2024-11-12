@@ -1,3 +1,4 @@
+using DG.Tweening;
 using SpinMatch.Boards;
 using SpinMatch.Enums;
 using UnityEngine;
@@ -54,6 +55,11 @@ namespace SpinMatch.Items
             SetScale(1);
             SetItemStateDelay(0);
         }
+        
+        private void OnMouseDown()
+        {
+            // EventManager<Vector2>.Execute(BoardEvents.OnPointerDown, worldPos);
+        }
 
         protected void SetConfigureType(int configureType)
         {
@@ -69,9 +75,23 @@ namespace SpinMatch.Items
         {
             DestinationSlot = destinationSlot;
         }
-        
 
-        public void MoveToTarget(Vector2 targetPosition, float speed)
+        public void MoveToDestinationSlot()
+        {
+            _rigidbody2D.velocity =Vector2.zero;
+
+            if (DestinationSlot==null)
+            {
+                ReturnToPool();
+                ResetItem();
+            }
+            else
+            {
+                transform.DOMoveY(DestinationSlot.WorldPosition.y, 1);
+            }
+        }
+
+        public void MoveToSpinTarget(Vector2 targetPosition, float speed)
         {
             if (_rigidbody2D == null)
             {

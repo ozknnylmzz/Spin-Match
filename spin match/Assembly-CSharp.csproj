@@ -70,6 +70,7 @@
     <Compile Include="Assets/Scripts/Boards/GridPosition.cs" />
     <Compile Include="Assets/Scripts/Boards/Board.cs" />
     <Compile Include="Assets/Scripts/Matchs/IMatchDetector.cs" />
+    <Compile Include="Assets/Scripts/Input/InputHandler.cs" />
     <Compile Include="Assets/Scripts/Enums/ItemState.cs" />
     <Compile Include="Assets/DOTween/Modules/DOTweenModulePhysics2D.cs" />
     <Compile Include="Assets/Scripts/Items/GridItem.cs" />
