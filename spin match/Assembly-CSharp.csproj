@@ -55,6 +55,7 @@
     <Compile Include="Assets/Scripts/Enums/BoardEvents.cs" />
     <Compile Include="Assets/Scripts/Matchs/MatchDataProvider.cs" />
     <Compile Include="Assets/Scripts/Matchs/MatchDetector.cs" />
+    <Compile Include="Assets/Scripts/Spin/SpinDetector.cs" />
     <Compile Include="Assets/Scripts/Data/Scriptables/ColoredItemConfigureData.cs" />
     <Compile Include="Assets/DOTween/Modules/DOTweenModuleUnityVersion.cs" />
     <Compile Include="Assets/DOTween/Modules/DOTweenModulePhysics.cs" />

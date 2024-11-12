@@ -9,19 +9,17 @@ namespace SpinMatch.Boards
     public class Board : MonoBehaviour, IBoard
     {
         [SerializeField] private BoardConfigData _boardConfigData;
-
         private const float _cellSize = 1f;
         private Vector3 _originPos;
-
         private IGridSlot[,] _gridSlots;
         private GridPosition[] _allGridPositions;
-        private List<IGridSlot> _topSlots = new(); 
-        private List<IGridSlot> _bottomSlots = new(); 
+        public List<IGridSlot> TopSlots { get; private set; } = new();
+        public List<IGridSlot> BottomSlots { get; private set; } = new();
+        public List<IGridSlot> InBoardSlots { get; private set; } = new();
+        public List<IGridSlot> AllSlots { get; private set; } = new();
         public IGridSlot this[GridPosition gridPosition] => _gridSlots[gridPosition.RowIndex, gridPosition.ColumnIndex];
         public IGridSlot this[int rowIndex, int columnIndex] => _gridSlots[rowIndex, columnIndex];
 
-        public GridPosition[] AllGridPositions => _allGridPositions;
-        // public IGridSlot[] AllGridSlots  => _allGridSlots;
         public int RowCount => _boardConfigData.RowCount;
         public int ColumnCount => _boardConfigData.ColumnCount;
 
@@ -37,6 +35,8 @@ namespace SpinMatch.Boards
 
             _originPos = GetOriginPosition(RowCount, ColumnCount);
 
+            GenerateSlotsOutBoard(TopSlots, Constants.SLOT_TYPE_TOP);
+
             for (int i = 0; i < RowCount; i++)
             {
                 for (int j = 0; j < ColumnCount; j++)
@@ -50,14 +50,13 @@ namespace SpinMatch.Boards
 
                     GridPosition gridPosition = new GridPosition(i, j);
                     gridSlot.SetPosition(gridPosition, slotPosition);
-
+                    AllSlots.Add(gridSlot);
+                    InBoardSlots.Add(gridSlot);
                     _gridSlots[i, j] = gridSlot;
                     _allGridPositions[iteration] = gridPosition;
                 }
             }
-            
-            GenerateSlotsOutBoard( _topSlots, Constants.SLOT_TYPE_TOP);
-            GenerateSlotsOutBoard( _bottomSlots, Constants.SLOT_TYPE_BOTTOM);
+
         }
 
         private void GenerateSlotsOutBoard(List<IGridSlot> slotList, string slotType)
@@ -66,17 +65,21 @@ namespace SpinMatch.Boards
             {
                 for (int j = 0; j < RowCount; j++)
                 {
-                    Vector3 slotPosition=slotType==Constants.SLOT_TYPE_TOP
-                        ?GridToWorldPosition(i + RowCount, j)
-                        : GridToWorldPosition(i - RowCount, j); 
-                 
-                    GridSlot sideSlot = Instantiate(_boardConfigData.Grid, slotPosition, Quaternion.identity, transform);
+                    Vector3 slotPosition = slotType == Constants.SLOT_TYPE_TOP
+                        ? GridToWorldPosition(i + RowCount, j)
+                        : GridToWorldPosition(i - RowCount, j);
+
+                    GridSlot sideSlot =
+                        Instantiate(_boardConfigData.Grid, slotPosition, Quaternion.identity, transform);
                     sideSlot.name = $"{slotType} {i}";
-                    slotList.Add(sideSlot); 
+                    sideSlot.SetPosition(slotPosition);
+
+                    slotList.Add(sideSlot);
+                    AllSlots.Add(sideSlot);                                                                                 
                 }
             }
         }
-        
+
         public bool IsPointerOnBoard(Vector3 pointerWorldPos, out GridPosition gridPosition)
         {
             gridPosition = WorldToGridPosition(pointerWorldPos);
@@ -112,7 +115,7 @@ namespace SpinMatch.Boards
         {
             return GridToWorldPosition(gridPosition.RowIndex, gridPosition.ColumnIndex);
         }
-        
+
         private Vector3 GridToWorldPosition(int rowIndex, int columnIndex)
         {
             return new Vector3(columnIndex, rowIndex) * (_cellSize + _boardConfigData.CellSpacing) + _originPos;

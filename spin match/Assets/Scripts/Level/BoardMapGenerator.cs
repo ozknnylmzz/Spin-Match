@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using SpinMatch.Boards;
 using SpinMatch.Data;
 using SpinMatch.Enums;
@@ -31,6 +33,8 @@ namespace SpinMatch.Level
 
         public void FillBoardWithItems()
         {
+            int topSlotIndex=0;
+            
             for (int i = 0; i < _board.RowCount; i++)
             {
                 for (int j = 0; j < _board.ColumnCount; j++)
@@ -40,8 +44,23 @@ namespace SpinMatch.Level
                     if (!gridSlot.CanSetItem)
                         continue;
 
-                    SetItemWithoutMatch(_board, gridSlot);
+                    SetItemWithoutMatch(_board, gridSlot,out GridItem item);
+                    topSlotIndex++;
                 }
+            }
+        }
+
+        public void FillOutBoardItems()
+        {
+            int topSlotIndex=_board.ColumnCount*_board.RowCount;
+            
+            foreach (IGridSlot slot in _board.TopSlots)
+            {
+                if (!slot.CanSetItem)
+                    continue;
+                
+                SetItemWithoutMatch(_board, slot,out GridItem item);
+                topSlotIndex--;
             }
         }
 
@@ -51,15 +70,13 @@ namespace SpinMatch.Level
             _itemGenerator.GeneratePool(itemData.ItemPrefab, itemData.ConfigureData.ItemPoolSize);
         }
 
-        private void SetItemWithoutMatch(IBoard board, IGridSlot slot)
+        private void SetItemWithoutMatch(IBoard board, IGridSlot slot,out GridItem item)
         { 
-            GridItem item;
-            
             while (true)
             {
                 item = _itemGenerator.CheckRequiredItem() ? _itemGenerator.GetRandomNormalItem() : _itemGenerator.GetRequiredItem();
-                item.SetDestinationSlot(slot);
-                _itemGenerator.SetItemOnSlot(item, slot);
+                // item.SetDestinationSlot(slot);
+                 _itemGenerator.SetItemOnSlot(item, slot);
 
                 BoardMatchData boardMatchData = _matchDataProvider.GetMatchData(board, slot.GridPosition);
 

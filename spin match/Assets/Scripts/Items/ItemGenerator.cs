@@ -56,6 +56,11 @@ namespace SpinMatch.Items
 
             slot.SetItem(item);
         }
+
+        public void SetItemPosition(GridItem item,Vector2 worldPosition)
+        {
+            item.SetWorldPosition(worldPosition);
+        }
         
         public void ConfigureRequiredItems()
         {

@@ -1,3 +1,4 @@
+using DG.Tweening;
 using SpinMatch.Game;
 using SpinMatch.Items;
 using SpinMatch.Level;
@@ -10,7 +11,7 @@ namespace SpinMatch.Boards
     public class BoardInitializer : MonoBehaviour
     {
         [SerializeField] private Board _board;
-        [FormerlySerializedAs("_levelGenerator")] [SerializeField] private BoardMapGenerator boardMapGenerator;
+        [SerializeField] private BoardMapGenerator boardMapGenerator;
         [SerializeField] private ItemGenerator _itemGenerator;
         [SerializeField] private SpinController _spinController;
         
@@ -21,6 +22,7 @@ namespace SpinMatch.Boards
         {
             ConstructObjects();
             InitializeGame();
+            DOTween.Init().SetCapacity(500, 500);
         }
 
         private void InitializeGame()
@@ -29,6 +31,7 @@ namespace SpinMatch.Boards
             _board.Initialize();
             boardMapGenerator.Initialize(_board, _itemGenerator, _gameConfig);
             _levelLoader.Initialize(boardMapGenerator);
+            _spinController.Initialize(_board);
         }
 
         private void ConstructObjects()

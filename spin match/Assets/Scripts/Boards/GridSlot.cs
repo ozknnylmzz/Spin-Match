@@ -26,6 +26,11 @@ namespace SpinMatch.Boards
             GridPosition = gridPosition;
             WorldPosition = worldPosition;
         }
+        
+        public void SetPosition(Vector3 worldPosition)
+        {
+            WorldPosition = worldPosition;
+        }
 
         public void SetItem(GridItem item)
         {

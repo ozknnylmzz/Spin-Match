@@ -6,6 +6,8 @@ namespace SpinMatch.Items
 {
     public abstract class GridItem : MonoBehaviour
     {
+        [SerializeField] private Rigidbody2D _rigidbody2D;
+        private bool _isMoving;
         public abstract ItemType ItemType { get; }
         public ItemState ItemState { get; private set; } = ItemState.Rest;
         public int ConfigureType { get; private set; } = 0;
@@ -16,11 +18,17 @@ namespace SpinMatch.Items
         public IGridSlot ItemSlot { get; private set; }
 
         public IGridSlot DestinationSlot { get; private set; }
+        
+        public IGridSlot StartPointSpinSlot { get; private set; }
 
         public int ItemStateDelay { get; private set; } = 0;
 
+        public Vector2 StartSpinPosition => StartPointSpinSlot.WorldPosition;
+
         private ItemGenerator _generator;
+
         public virtual void Initialize() {}
+        
         private void SetScale(float scale)
         {
             transform.SetScale(scale);
@@ -36,12 +44,6 @@ namespace SpinMatch.Items
             _generator = generator;
         }
 
-        public void SetState(ItemState state)
-        {
-            if (ItemState == ItemState.Hide) return;
-            ItemState = state;
-        }
-
         public void ReturnToPool()
         {
             _generator.ReturnItemToPool(this);
@@ -50,7 +52,6 @@ namespace SpinMatch.Items
         public virtual void ResetItem()
         {
             SetScale(1);
-            ItemState = ItemState.Rest;
             SetItemStateDelay(0);
         }
 
@@ -68,6 +69,22 @@ namespace SpinMatch.Items
         {
             DestinationSlot = destinationSlot;
         }
+        
+
+        public void MoveToTarget(Vector2 targetPosition, float speed)
+        {
+            if (_rigidbody2D == null)
+            {
+                Debug.LogError("Rigidbody2D is not assigned!");
+                return;
+            }
+
+            _isMoving = true;
+
+            Vector2 direction = (targetPosition - _rigidbody2D.position).normalized;
+            _rigidbody2D.velocity = direction * speed;
+        }
+
 
         /// <summary>
         ///   <para>shouldPlayExplosion: explosion particle oynasin mi</para>
