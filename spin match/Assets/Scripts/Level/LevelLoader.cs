@@ -16,8 +16,7 @@ namespace SpinMatch.Level
 
             boardMapGenerator.SetConfigureTypes(configureTypes);
             boardMapGenerator.GenerateItemsPool(ItemType.BoardItem);
-            boardMapGenerator.FillBoardWithItems();
-            boardMapGenerator.FillOutBoardItems();
+            boardMapGenerator.FillBoardWithSpinItems();
         }
     }
 }

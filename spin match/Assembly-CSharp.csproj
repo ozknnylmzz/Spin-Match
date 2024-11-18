@@ -26,7 +26,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\Bin\Debug\Assembly-CSharp\</OutputPath>
-    <DefineConstants>UNITY_2022_3_23;UNITY_2022_3;UNITY_2022;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_2022_1_OR_NEWER;UNITY_2022_2_OR_NEWER;UNITY_2022_3_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_EDITOR_GAME_SERVICES;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_GENERATE_NATIVE_PLUGINS_FOR_ASSEMBLIES_API;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;ENABLE_NAVIGATION_PACKAGE_DEBUG_VISUALIZATION;ENABLE_NAVIGATION_HEIGHTMESH_RUNTIME_SUPPORT;ENABLE_NAVIGATION_UI_REQUIRES_PACKAGE;PLATFORM_STANDALONE;TEXTCORE_1_0_OR_NEWER;PLATFORM_STANDALONE_OSX;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_GAMECENTER;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;ENABLE_SPATIALTRACKING;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;ENABLE_MONO;NET_STANDARD_2_0;NET_STANDARD;NET_STANDARD_2_1;NETSTANDARD;NETSTANDARD2_1;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>UNITY_2022_3_23;UNITY_2022_3;UNITY_2022;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_2022_1_OR_NEWER;UNITY_2022_2_OR_NEWER;UNITY_2022_3_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_EDITOR_GAME_SERVICES;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_GENERATE_NATIVE_PLUGINS_FOR_ASSEMBLIES_API;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;ENABLE_NAVIGATION_PACKAGE_DEBUG_VISUALIZATION;ENABLE_NAVIGATION_HEIGHTMESH_RUNTIME_SUPPORT;ENABLE_NAVIGATION_UI_REQUIRES_PACKAGE;PLATFORM_STANDALONE;TEXTCORE_1_0_OR_NEWER;PLATFORM_STANDALONE_OSX;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_GAMECENTER;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;ENABLE_SPATIALTRACKING;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;ENABLE_MONO;NET_STANDARD_2_0;NET_STANDARD;NET_STANDARD_2_1;NETSTANDARD;NETSTANDARD2_1;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;UNITASK_DOTWEEN_SUPPORT;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169,0649</NoWarn>
@@ -46,21 +46,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/Scripts/Enums/ItemType.cs" />
+    <Compile Include="Assets/Scripts/Input/BoardInputController.cs" />
     <Compile Include="Assets/Scripts/Matchs/MatchSequence.cs" />
     <Compile Include="Assets/Scripts/EventManager.cs" />
     <Compile Include="Assets/Scripts/Matchs/VerticalMatchDetector.cs" />
+    <Compile Include="Assets/Scripts/Boards/BoardExtensions.cs" />
     <Compile Include="Assets/Scripts/Boards/GridSlot.cs" />
     <Compile Include="Assets/Scripts/Matchs/MatchData.cs" />
+    <Compile Include="Assets/Scripts/Strategy/BaseFillStrategy.cs" />
     <Compile Include="Assets/DOTween/Modules/DOTweenModuleAudio.cs" />
     <Compile Include="Assets/Scripts/Enums/BoardEvents.cs" />
     <Compile Include="Assets/Scripts/Matchs/MatchDataProvider.cs" />
+    <Compile Include="Assets/Scripts/Enums/ExecutionOrders.cs" />
     <Compile Include="Assets/Scripts/Matchs/MatchDetector.cs" />
     <Compile Include="Assets/Scripts/Spin/SpinDetector.cs" />
+    <Compile Include="Assets/Scripts/Game/Move.cs" />
     <Compile Include="Assets/Scripts/Data/Scriptables/ColoredItemConfigureData.cs" />
     <Compile Include="Assets/DOTween/Modules/DOTweenModuleUnityVersion.cs" />
     <Compile Include="Assets/DOTween/Modules/DOTweenModulePhysics.cs" />
     <Compile Include="Assets/Scripts/Boards/BoardMatchData.cs" />
     <Compile Include="Assets/Scripts/Boards/IGridSlot.cs" />
+    <Compile Include="Assets/Scripts/Strategy/StrategyConfig.cs" />
+    <Compile Include="Assets/Scripts/Game/Match3Game.cs" />
     <Compile Include="Assets/Scripts/ObjectPool.cs" />
     <Compile Include="Assets/Scripts/Enums/ColorType.cs" />
     <Compile Include="Assets/Scripts/UI/SpriteClickHandler.cs" />
@@ -68,31 +75,41 @@
     <Compile Include="Assets/Scripts/Matchs/IMatchDataProvider.cs" />
     <Compile Include="Assets/Scripts/Data/Scriptables/AllItemsData.cs" />
     <Compile Include="Assets/Scripts/Boards/GridPosition.cs" />
+    <Compile Include="Assets/Scripts/Strategy/MatchClearStrategy.cs" />
     <Compile Include="Assets/Scripts/Boards/Board.cs" />
     <Compile Include="Assets/Scripts/Matchs/IMatchDetector.cs" />
-    <Compile Include="Assets/Scripts/Input/InputHandler.cs" />
     <Compile Include="Assets/Scripts/Enums/ItemState.cs" />
     <Compile Include="Assets/DOTween/Modules/DOTweenModulePhysics2D.cs" />
     <Compile Include="Assets/Scripts/Items/GridItem.cs" />
     <Compile Include="Assets/Scripts/Items/ConfigureData.cs" />
     <Compile Include="Assets/DOTween/Modules/DOTweenModuleUI.cs" />
+    <Compile Include="Assets/Scripts/Jobs/JobsExecutor.cs" />
     <Compile Include="Assets/DOTween/Modules/DOTweenModuleSprite.cs" />
     <Compile Include="Assets/Scripts/Level/BoardMapGenerator.cs" />
     <Compile Include="Assets/Scripts/Data/Scriptables/BoardConfigData.cs" />
+    <Compile Include="Assets/Scripts/Items/ItemFallData.cs" />
+    <Compile Include="Assets/Scripts/Jobs/ItemsHideJob.cs" />
+    <Compile Include="Assets/Scripts/Strategy/FallDownFillStrategy.cs" />
     <Compile Include="Assets/Scripts/Items/NormalItem.cs" />
     <Compile Include="Assets/Scripts/Level/LevelLoader.cs" />
+    <Compile Include="Assets/Scripts/Jobs/ItemsFallJob.cs" />
     <Compile Include="Assets/Scripts/Items/ItemGenerator.cs" />
+    <Compile Include="Assets/Scripts/Jobs/Job.cs" />
     <Compile Include="Assets/Scripts/Data/Constants.cs" />
     <Compile Include="Assets/Scripts/Matchs/HorizontalMatchDetector.cs" />
+    <Compile Include="Assets/Scripts/Boards/BoardHelper.cs" />
     <Compile Include="Assets/Scripts/Extensions.cs" />
     <Compile Include="Assets/DOTween/Modules/DOTweenModuleEPOOutline.cs" />
+    <Compile Include="Assets/Scripts/Items/ItemSwapper.cs" />
     <Compile Include="Assets/Scripts/DynamicCamera.cs" />
     <Compile Include="Assets/DOTween/Modules/DOTweenModuleUtils.cs" />
     <Compile Include="Assets/Scripts/Game/GameConfig.cs" />
+    <Compile Include="Assets/Scripts/Items/ItemStateManager.cs" />
     <Compile Include="Assets/Scripts/Items/SpriteItem.cs" />
     <Compile Include="Assets/Scripts/Boards/IBoard.cs" />
     <Compile Include="Assets/Scripts/Spin/SpinController.cs" />
     <Compile Include="Assets/Scripts/Enums/MatchDetectorType.cs" />
+    <Compile Include="Assets/Scripts/Strategy/BoardClearStrategy.cs" />
     <None Include="Assets/DOTween/readme.txt" />
     <Reference Include="UnityEngine">
       <HintPath>/Applications/Unity/Hub/Editor/2022.3.23f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -745,6 +762,9 @@
     <Reference Include="Unity.PlasticSCM.Editor">
       <HintPath>/Users/apple/Documents/Spin-Match/spin match/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="UniTask.TextMeshPro">
+      <HintPath>/Users/apple/Documents/Spin-Match/spin match/Library/ScriptAssemblies/UniTask.TextMeshPro.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.Common.Path.Editor">
       <HintPath>/Users/apple/Documents/Spin-Match/spin match/Library/ScriptAssemblies/Unity.2D.Common.Path.Editor.dll</HintPath>
     </Reference>
@@ -753,6 +773,12 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
       <HintPath>/Users/apple/Documents/Spin-Match/spin match/Library/ScriptAssemblies/Unity.VisualScripting.Shared.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UniTask.DOTween">
+      <HintPath>/Users/apple/Documents/Spin-Match/spin match/Library/ScriptAssemblies/UniTask.DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="UniTask.Addressables">
+      <HintPath>/Users/apple/Documents/Spin-Match/spin match/Library/ScriptAssemblies/UniTask.Addressables.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>/Users/apple/Documents/Spin-Match/spin match/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
@@ -766,14 +792,14 @@
     <Reference Include="Unity.2D.Animation.Runtime">
       <HintPath>/Users/apple/Documents/Spin-Match/spin match/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Tilemap.Extras">
-      <HintPath>/Users/apple/Documents/Spin-Match/spin match/Library/ScriptAssemblies/Unity.2D.Tilemap.Extras.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualScripting.Core.Editor">
       <HintPath>/Users/apple/Documents/Spin-Match/spin match/Library/ScriptAssemblies/Unity.VisualScripting.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>/Users/apple/Documents/Spin-Match/spin match/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Extras">
+      <HintPath>/Users/apple/Documents/Spin-Match/spin match/Library/ScriptAssemblies/Unity.2D.Tilemap.Extras.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.PixelPerfect.Editor">
       <HintPath>/Users/apple/Documents/Spin-Match/spin match/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
@@ -783,6 +809,9 @@
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
       <HintPath>/Users/apple/Documents/Spin-Match/spin match/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UniTask.Linq">
+      <HintPath>/Users/apple/Documents/Spin-Match/spin match/Library/ScriptAssemblies/UniTask.Linq.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow">
       <HintPath>/Users/apple/Documents/Spin-Match/spin match/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll</HintPath>
@@ -843,6 +872,9 @@
     </Reference>
     <Reference Include="Unity.2D.Aseprite.Editor">
       <HintPath>/Users/apple/Documents/Spin-Match/spin match/Library/ScriptAssemblies/Unity.2D.Aseprite.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UniTask">
+      <HintPath>/Users/apple/Documents/Spin-Match/spin match/Library/ScriptAssemblies/UniTask.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>/Users/apple/Documents/Spin-Match/spin match/Library/ScriptAssemblies/Unity.VisualScripting.State.dll</HintPath>

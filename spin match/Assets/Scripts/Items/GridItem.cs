@@ -8,7 +8,6 @@ namespace SpinMatch.Items
     public abstract class GridItem : MonoBehaviour
     {
         [SerializeField] private Rigidbody2D _rigidbody2D;
-        private bool _isMoving;
         public abstract ItemType ItemType { get; }
         public ItemState ItemState { get; private set; } = ItemState.Rest;
         public int ConfigureType { get; private set; } = 0;
@@ -20,14 +19,11 @@ namespace SpinMatch.Items
 
         public IGridSlot DestinationSlot { get; private set; }
         
-        public IGridSlot StartPointSpinSlot { get; private set; }
-
         public int ItemStateDelay { get; private set; } = 0;
 
-        public Vector2 StartSpinPosition => StartPointSpinSlot.WorldPosition;
-
         private ItemGenerator _generator;
-
+        
+        public int PathDistance { get; private set; } = 0;
         public virtual void Initialize() {}
         
         private void SetScale(float scale)
@@ -56,9 +52,14 @@ namespace SpinMatch.Items
             SetItemStateDelay(0);
         }
         
-        private void OnMouseDown()
+        public void SetState(ItemState state)
         {
-            // EventManager<Vector2>.Execute(BoardEvents.OnPointerDown, worldPos);
+            if (ItemState == ItemState.Hide) return;
+            ItemState = state;
+        }
+        public void ResetPathDistance()
+        {
+            PathDistance = 0;
         }
 
         protected void SetConfigureType(int configureType)
@@ -76,18 +77,27 @@ namespace SpinMatch.Items
             DestinationSlot = destinationSlot;
         }
 
-        public void MoveToDestinationSlot()
+        public void SetPathDistance(int pathDistance)
+        {
+            PathDistance = pathDistance;
+        }
+
+        public Tween MoveToDestinationSlot()
         {
             _rigidbody2D.velocity =Vector2.zero;
 
             if (DestinationSlot==null)
             {
+                
                 ReturnToPool();
                 ResetItem();
+                Kill();
+                return null;
             }
             else
             {
-                transform.DOMoveY(DestinationSlot.WorldPosition.y, 1);
+                SetSlot(DestinationSlot);
+              return  transform.DOMoveY(DestinationSlot.WorldPosition.y, 1);
             }
         }
 
@@ -98,8 +108,6 @@ namespace SpinMatch.Items
                 Debug.LogError("Rigidbody2D is not assigned!");
                 return;
             }
-
-            _isMoving = true;
 
             Vector2 direction = (targetPosition - _rigidbody2D.position).normalized;
             _rigidbody2D.velocity = direction * speed;

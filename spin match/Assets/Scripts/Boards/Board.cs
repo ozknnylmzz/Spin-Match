@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using SpinMatch.data;
 using SpinMatch.Data;
+using SpinMatch.Items;
 using UnityEngine;
 
 namespace SpinMatch.Boards
@@ -14,12 +17,13 @@ namespace SpinMatch.Boards
         private IGridSlot[,] _gridSlots;
         private GridPosition[] _allGridPositions;
         public List<IGridSlot> TopSlots { get; private set; } = new();
-        public List<IGridSlot> BottomSlots { get; private set; } = new();
         public List<IGridSlot> InBoardSlots { get; private set; } = new();
         public List<IGridSlot> AllSlots { get; private set; } = new();
+        public List<GridItem> AllSpinItems { get; private set; } = new();
+        public List<GridItem> BoardItems { get;  set; } = new();
         public IGridSlot this[GridPosition gridPosition] => _gridSlots[gridPosition.RowIndex, gridPosition.ColumnIndex];
         public IGridSlot this[int rowIndex, int columnIndex] => _gridSlots[rowIndex, columnIndex];
-
+        public GridPosition[] AllGridPositions => _allGridPositions;
         public int RowCount => _boardConfigData.RowCount;
         public int ColumnCount => _boardConfigData.ColumnCount;
 
@@ -74,7 +78,7 @@ namespace SpinMatch.Boards
                     sideSlot.SetPosition(slotPosition);
 
                     slotList.Add(sideSlot);
-                    AllSlots.Add(sideSlot);                                                                                 
+                    AllSlots.Add(sideSlot);
                 }
             }
         }
@@ -91,9 +95,43 @@ namespace SpinMatch.Boards
             return gridPosition.IsPositionInBounds(RowCount, ColumnCount);
         }
 
-        private bool IsPositionOnBoard(GridPosition gridPosition)
+        public bool IsPositionOnBoard(GridPosition gridPosition)
         {
             return IsPositionInBounds(gridPosition);
+        }
+
+
+        public void ClearAllSlot()
+        {
+            foreach (var boardSlot in InBoardSlots)
+            {
+                boardSlot.ClearSlot();
+            }
+        }
+
+        public void AddSpinItem(GridItem spinItem)
+        {
+            AllSpinItems.Add(spinItem);
+        }
+
+        public void AddBoardItem(GridItem boardItem)
+        {
+            BoardItems.Add(boardItem);
+        }
+
+        public Tween MoveToSlotItem()
+        {
+            int slotIndex = 0;
+            Sequence sequence = DOTween.Sequence();
+            foreach (var item in BoardItems)
+            {
+                IGridSlot inBoardSlot= InBoardSlots[slotIndex];
+                InBoardSlots[slotIndex].SetItem(item);
+                sequence.Join(item.transform.DOMoveY(inBoardSlot.WorldPosition.y, 1));
+
+                slotIndex++;
+            }
+            return sequence;
         }
 
         public bool IsPositionOnItem(GridPosition gridPosition)

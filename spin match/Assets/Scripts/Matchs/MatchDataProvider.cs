@@ -42,9 +42,9 @@ namespace SpinMatch.Matchs
                         matchSequences.UnionWith(sharedMatchData.MatchedSequences);
 
                         matchData.SetMatchDatas(matchSequences);
+                        
                     }
                 }
-
                 matchedDataAllSlots.MatchDataList.Add(matchData);
             }
         }
@@ -76,6 +76,7 @@ namespace SpinMatch.Matchs
         {
             bool isSharedFound = false;
             sharedMatchData = new List<MatchData>();
+            
             foreach (MatchData matchData in matchDataList)
             {
                 if (currentMatchData.MatchedGridSlots.Overlaps(matchData.MatchedGridSlots))

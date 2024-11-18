@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using SpinMatch.Boards;
 using SpinMatch.Data;
 using SpinMatch.Enums;
@@ -31,25 +30,43 @@ namespace SpinMatch.Level
             _itemGenerator.SetConfigureTypes(possibleConfigureTypes);
         }
 
-        public void FillBoardWithItems()
+        public void FillBoardWithSpinItems()
         {
-            int topSlotIndex = 0;
-            foreach (IGridSlot gridSlot in _board.TopSlots)
+            foreach (IGridSlot gridSlot in _board.AllSlots)
             {
-                SetItemWithoutMatch(_board, gridSlot,out GridItem item);
-                item.SetDestinationSlot(_board.InBoardSlots[topSlotIndex]);
-                topSlotIndex++;
+                SetSpinItemInBoard(_board, gridSlot, out GridItem item);
+                _board.AddSpinItem(item);
             }
         }
 
-        public void FillOutBoardItems()
+        public void FillTopWithSpinItems()
         {
+            foreach (IGridSlot topSlot in _board.TopSlots)
+            {
+                SetItemWithoutMatch(_board, topSlot, out GridItem item);
+                _board.AddSpinItem(item);
+                _itemGenerator.SetItemOnSlotPosition(item, topSlot);
+            }
+            
+        }
+
+        public async UniTask FillBoardItems()
+        {
+            int topSlotIndex = 0;
+            _board.BoardItems.Clear();
+            _board.ClearAllSlot();
             foreach (IGridSlot slot in _board.InBoardSlots)
             {
-                if (!slot.CanSetItem)
-                    continue;
-                SetItemWithoutMatch(_board, slot,out GridItem item);
+                SetItemWithoutMatch(_board, slot, out GridItem item);
+                _board.AddBoardItem(item);
+                _board.AddSpinItem(item);
+                _itemGenerator.SetItemOnSlotPosition(item, _board.TopSlots[topSlotIndex]);
+                topSlotIndex++;
+
+                
+                await UniTask.Yield(); 
             }
+           
         }
 
         public void GenerateItemsPool(ItemType itemType)
@@ -58,13 +75,14 @@ namespace SpinMatch.Level
             _itemGenerator.GeneratePool(itemData.ItemPrefab, itemData.ConfigureData.ItemPoolSize);
         }
 
-        private void SetItemWithoutMatch(IBoard board, IGridSlot slot,out GridItem item)
-        { 
+        private void SetItemWithoutMatch(IBoard board, IGridSlot slot, out GridItem item)
+        {
             while (true)
             {
-                item = _itemGenerator.CheckRequiredItem() ? _itemGenerator.GetRandomNormalItem() : _itemGenerator.GetRequiredItem();
-                 _itemGenerator.SetItemOnSlot(item, slot);
-
+                item = _itemGenerator.CheckRequiredItem()
+                    ? _itemGenerator.GetRandomNormalItem()
+                    : _itemGenerator.GetRequiredItem();
+                _itemGenerator.SetItemOnSlot(item, slot);
                 BoardMatchData boardMatchData = _matchDataProvider.GetMatchData(board, slot.GridPosition);
 
                 if (!boardMatchData.MatchExists) return;
@@ -72,5 +90,12 @@ namespace SpinMatch.Level
                 item.Hide();
             }
         }
+
+        private void SetSpinItemInBoard(IBoard board, IGridSlot slot, out GridItem item)
+        {
+            item = _itemGenerator.GetRandomNormalItem();
+            _itemGenerator.SetItemOnSlotPosition(item, slot);
+        }
+
     }
 }

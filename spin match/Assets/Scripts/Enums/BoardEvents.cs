@@ -11,5 +11,7 @@ namespace SpinMatch.Enums
         OnPointerDown,
         OnPointerUp,
         OnPointerDrag,
+        OnBeforeJobsStart,
+        OnAfterJobsCompleted
     }
 }

@@ -52,16 +52,14 @@ namespace SpinMatch.Items
 
         public void SetItemOnSlot(GridItem item, IGridSlot slot)
         {
-            item.SetWorldPosition(slot.WorldPosition);
-
             slot.SetItem(item);
         }
-
-        public void SetItemPosition(GridItem item,Vector2 worldPosition)
-        {
-            item.SetWorldPosition(worldPosition);
-        }
         
+        public void SetItemOnSlotPosition(GridItem item, IGridSlot slot)
+        {
+            item.SetWorldPosition(slot.WorldPosition);
+        }
+
         public void ConfigureRequiredItems()
         {
             _requiredItems = new List<int>();
