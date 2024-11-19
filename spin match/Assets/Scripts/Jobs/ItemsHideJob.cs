@@ -24,10 +24,9 @@ namespace SpinMatch.Jobs
         {
             Debug.Log("ItemsHideJob  Start"); 
             
-            // await UniTask.WhenAll(_items.Select(item => UniTask.WaitUntil(() => item.ItemState == ItemState.Rest)));
+             // await UniTask.WhenAll(_items.Select(item => UniTask.WaitUntil(() => item.ItemState == ItemState.Rest)));
             Debug.Log("ItemsHideJob  End");
             
-
             Sequence sequence = DOTween.Sequence();
 
             foreach (GridItem item in _items)

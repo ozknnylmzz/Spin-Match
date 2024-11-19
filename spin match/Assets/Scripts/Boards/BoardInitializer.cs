@@ -49,9 +49,9 @@ namespace SpinMatch.Boards
             _strategyConfig.Initialize(_board, _itemGenerator);
             _boardMapGenerator.Initialize(_board, _itemGenerator, _gameConfig);
             _match3Game.Initialize(_strategyConfig, _gameConfig, _board);
-            _levelLoader.Initialize(_boardMapGenerator);
-            _spinController.Initialize(_board,_boardMapGenerator);
             _inputController.Initialize(_match3Game);
+            _levelLoader.Initialize(_boardMapGenerator);
+            _spinController.Initialize(_board,_boardMapGenerator,_inputController);
         }
 
         private void ConstructObjects()

@@ -49,7 +49,13 @@ namespace SpinMatch.Items
         public virtual void ResetItem()
         {
             SetScale(1);
+            SetState(ItemState.Rest);
             SetItemStateDelay(0);
+        }
+        
+        public void SetDestinationSlot(IGridSlot destinationSlot)
+        {
+            DestinationSlot = destinationSlot;
         }
         
         public void SetState(ItemState state)
@@ -72,33 +78,30 @@ namespace SpinMatch.Items
             ColorType = colorType;
         }
 
-        public void SetDestinationSlot(IGridSlot destinationSlot)
-        {
-            DestinationSlot = destinationSlot;
-        }
-
         public void SetPathDistance(int pathDistance)
         {
             PathDistance = pathDistance;
         }
 
-        public Tween MoveToDestinationSlot()
+        public void MoveToDestinationSlot()
         {
             _rigidbody2D.velocity =Vector2.zero;
-
-            if (DestinationSlot==null)
-            {
-                
-                ReturnToPool();
-                ResetItem();
-                Kill();
-                return null;
-            }
-            else
-            {
-                SetSlot(DestinationSlot);
-              return  transform.DOMoveY(DestinationSlot.WorldPosition.y, 1);
-            }
+            ReturnToPool();
+            ResetItem();
+            Kill();
+            // if (DestinationSlot==null)
+            // {
+            //     
+            //     ReturnToPool();
+            //     ResetItem();
+            //     Kill();
+            //     return null;
+            // }
+            // else
+            // {
+            //     SetSlot(DestinationSlot);
+            //   return  transform.DOMoveY(DestinationSlot.WorldPosition.y, 1);
+            // }
         }
 
         public void MoveToSpinTarget(Vector2 targetPosition, float speed)

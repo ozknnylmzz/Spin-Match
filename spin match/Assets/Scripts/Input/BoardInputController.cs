@@ -7,13 +7,15 @@ using UnityEngine;
 
 namespace SpinMatch.Inputs
 {
-    public class BoardInputController : MonoBehaviour
+    public class BoardInputController : MonoBehaviour,IBlockInput
     {
         [SerializeField] private Camera mainCamera;
         private Match3Game _match3Game;
         private GridPosition _selectedGridPosition;
         private bool _isDragMode;
-        
+        public bool IsBlockInput { get; private set; }
+    
+
         public void Initialize(Match3Game match3Game)
         {
             _match3Game = match3Game;
@@ -21,6 +23,11 @@ namespace SpinMatch.Inputs
 
         private void Update()
         {
+            if (IsBlockInput)
+            {
+                return;
+            }
+            
             if (Input.GetMouseButtonDown(0))
             {
                 if (!_match3Game.IsSwapAllowed)
@@ -101,5 +108,11 @@ namespace SpinMatch.Inputs
             _match3Game.DisableSwap();
             _match3Game.SwapItemsAsync(swapInput.selectedGridPosition, swapInput.targetGridPosition);
         }
+        
+        public void SetBlockInput(bool isBlock)
+        {
+            IsBlockInput = isBlock;
+        }
+
     }
 }

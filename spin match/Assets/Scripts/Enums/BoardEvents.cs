@@ -8,10 +8,9 @@ namespace SpinMatch.Enums
     {
         Spin,
         Stop,
-        OnPointerDown,
-        OnPointerUp,
-        OnPointerDrag,
         OnBeforeJobsStart,
-        OnAfterJobsCompleted
+        OnAfterJobsCompleted,
+        OnActiveSpinButton,
+        OnActiveStopButton,
     }
 }

@@ -80,7 +80,7 @@ namespace SpinMatch.Strategy
                 _board.AddSpinItem(item);
                 
                 int pathDistance = rowIndex - destinationPosition.RowIndex;
-               
+                item.SetDestinationSlot(destinationSlot);
                 item.SetState(ItemState.WaitingToFall);
 
                 itemsFallData.Add(new ItemFallData(item, destinationSlot, pathDistance));
@@ -92,6 +92,7 @@ namespace SpinMatch.Strategy
             for (int rowIndex = 0; rowIndex < board.RowCount; rowIndex++)
             {
                 IGridSlot currentSlot = board[rowIndex, columnIndex];
+                
                 if (!currentSlot.CanSetItem)
                 {
                     continue;

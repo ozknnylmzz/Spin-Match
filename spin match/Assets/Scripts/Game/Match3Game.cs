@@ -3,6 +3,7 @@ using System.Linq;
 using Cysharp.Threading.Tasks;
 using SpinMatch.Boards;
 using SpinMatch.Enums;
+using SpinMatch.Inputs;
 using SpinMatch.Items;
 using SpinMatch.Jobs;
 using SpinMatch.Matchs;
@@ -167,11 +168,13 @@ namespace SpinMatch.Game
         private void EnableSwap()
         {
             _isSwapAllowed = true;
+            EventManager<bool>.Execute(BoardEvents.OnActiveSpinButton, false);
         }
 
         public void DisableSwap()
         {
             _isSwapAllowed = false;
+            EventManager<bool>.Execute(BoardEvents.OnActiveSpinButton, true);
         }
 
         #endregion
